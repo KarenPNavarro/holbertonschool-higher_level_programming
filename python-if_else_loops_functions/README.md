@@ -14,7 +14,7 @@ Task 4 - printed all numbers from 0 to 98 in decimal and hexadecimal.
 
 Task 5 & 6 - Printing number combinations using loops. 
 
-Task 7 - 
+Task 7 - Checking for lowercase letters.
 
 Task 8 - 
 
