@@ -9,20 +9,25 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     i = 0
-    length = len(text)
+    n = len(text)
 
-    while i < length:
+    while i < n:
 
         # skip leading spaces
-        while i < length and text[i] == " ":
+        while i < n and text[i] == " ":
             i += 1
 
-        while i < length:
+        while i < n:
             print(text[i], end="")
 
             if text[i] in ".?:":
                 print("\n")
                 i += 1
+
+                # skip spaces AFTER punctuation
+                while i < n and text[i] == " ":
+                    i += 1
+
                 break
 
             i += 1
