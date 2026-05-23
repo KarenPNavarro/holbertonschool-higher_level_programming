@@ -9,19 +9,20 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     i = 0
+    length = len(text)
 
-    while i < len(text) and text[i] == ' ':
-        i += 1
+    while i < length:
 
-    while i < len(text):
-        print(text[i], end="")
-
-        if text[i] in ".?:":
-            print("\n")
+        # skip leading spaces
+        while i < length and text[i] == " ":
             i += 1
 
-            while i < len(text) and text[i] == ' ':
-                i += 1
-            continue
+        while i < length:
+            print(text[i], end="")
 
-        i += 1
+            if text[i] in ".?:":
+                print("\n")
+                i += 1
+                break
+
+            i += 1
