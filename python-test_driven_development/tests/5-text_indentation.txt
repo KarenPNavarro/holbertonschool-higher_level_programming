@@ -1,20 +1,29 @@
->>> text_indentation = __import__('5-text_indentation').text_indentation
+The ``text_indentation`` function
+=================================
 
->>> text_indentation("Hello. How are you? Fine:")
-Hello.
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-How are you?
+    >>> text_indentation("Hello. How are you? Fine:")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    Fine:
+    <BLANKLINE>
 
-Fine:
-<BLANKLINE>
+    >>> text_indentation("Hello.")
+    Hello.
+    <BLANKLINE>
 
->>> text_indentation("  Best School: Holberton  ")
-Best School:
+    >>> text_indentation("No punctuation here")
+    No punctuation here
 
-Holberton
-<BLANKLINE>
+    >>> text_indentation(42)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
 
->>> text_indentation(89)
-Traceback (most recent call last):
-...
-TypeError: text must be a string
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
