@@ -4,11 +4,13 @@ The ``7-base_geometry`` module
 Importing the class:
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-
-A valid positive integer passes silently (returns None):
-
 >>> bg = BaseGeometry()
+
+Valid positive integers pass silently (return None):
+
+>>> bg.integer_validator("width", 1)
 >>> bg.integer_validator("width", 5)
+>>> bg.integer_validator("height", 100)
 
 area() always raises an Exception:
 
@@ -28,11 +30,47 @@ A float is not an integer:
 Traceback (most recent call last):
 TypeError: width must be an integer
 
-A bool is not accepted as an integer:
+True is rejected (bool is not an integer):
 
 >>> bg.integer_validator("flag", True)
 Traceback (most recent call last):
 TypeError: flag must be an integer
+
+False is rejected too:
+
+>>> bg.integer_validator("flag", False)
+Traceback (most recent call last):
+TypeError: flag must be an integer
+
+None is not an integer:
+
+>>> bg.integer_validator("value", None)
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+A list is not an integer:
+
+>>> bg.integer_validator("value", [1, 2, 3])
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+A tuple is not an integer:
+
+>>> bg.integer_validator("value", (1, 2))
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+A dict is not an integer:
+
+>>> bg.integer_validator("value", {"a": 1})
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+A set is not an integer:
+
+>>> bg.integer_validator("value", {1, 2})
+Traceback (most recent call last):
+TypeError: value must be an integer
 
 Zero is not greater than 0:
 
@@ -45,3 +83,9 @@ A negative value is not greater than 0:
 >>> bg.integer_validator("distance", -7)
 Traceback (most recent call last):
 ValueError: distance must be greater than 0
+
+Negative one is not greater than 0:
+
+>>> bg.integer_validator("size", -1)
+Traceback (most recent call last):
+ValueError: size must be greater than 0
