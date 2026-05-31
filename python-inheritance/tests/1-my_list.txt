@@ -1,9 +1,11 @@
 The ``1-my_list`` module
 ========================
 
+Importing the class:
+
 >>> MyList = __import__('1-my_list').MyList
 
-Printing sorted, ascending:
+print_sorted on an out-of-order list:
 
 >>> my_list = MyList()
 >>> my_list.append(1)
@@ -17,8 +19,24 @@ The original list is left unchanged:
 >>> print(my_list)
 [1, 4, 2]
 
-An empty list:
+print_sorted on an empty list:
 
 >>> empty = MyList()
 >>> empty.print_sorted()
 []
+
+print_sorted with negatives, appended out of order:
+
+>>> mixed = MyList()
+>>> mixed.append(3)
+>>> mixed.append(-1)
+>>> mixed.append(0)
+>>> mixed.append(-5)
+>>> mixed.append(2)
+>>> mixed.print_sorted()
+[-5, -1, 0, 2, 3]
+
+The original stays in its original order:
+
+>>> print(mixed)
+[3, -1, 0, -5, 2]
