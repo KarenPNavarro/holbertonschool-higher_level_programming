@@ -1,0 +1,24 @@
+The ``1-my_list`` module
+========================
+
+>>> MyList = __import__('1-my_list').MyList
+
+Printing sorted, ascending:
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[1, 2, 4]
+
+The original list is left unchanged:
+
+>>> print(my_list)
+[1, 4, 2]
+
+An empty list:
+
+>>> empty = MyList()
+>>> empty.print_sorted()
+[]
