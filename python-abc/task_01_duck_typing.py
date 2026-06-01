@@ -20,8 +20,8 @@ class Circle(Shape):
     """Represents a circle defined by its radius."""
 
     def __init__(self, radius):
-        """Initializes the circle with a radius."""
-        self.radius = radius
+        """Initializes the circle with a radius (absolute value)."""
+        self.radius = abs(radius)
 
     def area(self):
         """Returns the area of the circle."""
