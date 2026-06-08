@@ -1,19 +1,15 @@
 #!/usr/bin/python3
-"""Module that defines pascal_triangle function."""
+"""Module that defines serialization and deserialization functions."""
+import json
 
 
-def pascal_triangle(n):
-    """Return list of lists representing Pascal's triangle of n."""
-    if n <= 0:
-        return []
+def serialize_and_save_to_file(data, filename):
+    """Serialize a Python dictionary and save it to a JSON file."""
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(json.dumps(data))
 
-    triangle = [[1]]
 
-    for i in range(1, n):
-        row = [1]
-        for j in range(1, i):
-            row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
-        row.append(1)
-        triangle.append(row)
-
-    return triangle
+def load_and_deserialize(filename):
+    """Load and deserialize a JSON file to a Python dictionary."""
+    with open(filename, encoding="utf-8") as f:
+        return json.loads(f.read())
