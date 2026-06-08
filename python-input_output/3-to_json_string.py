@@ -3,9 +3,9 @@
 
 
 import json
-json.dumps(my_obj)
 
 
 def to_json_string(my_obj):
     """"Return JSON representation of an object."""
+    json.dumps(my_obj)
     return f.write(my_obj)
