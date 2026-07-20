@@ -1,15 +1,9 @@
-AUTHOR: GitHub @KarenPNavarro
+Server-side rendering is a powerful technique where web pages are generated on the server and sent to the client as fully formed HTML. This contrasts with client-side rendering, where the browser builds the web page using JavaScript and dynamic data. Through this project, you will learn how to implement SSR using Python and Flask, leveraging the Jinja templating engine to create dynamic, efficient, and SEO-friendly web applications.
 
-Python - if/else, loops, functions
-
-Task 0 - printed negative or positive numbers per number stored in variable. 
-
-Task 1 - printed the last digit of each number. 
-
-Task 2 - printed the ASCHII alphabet. 
-
-Task 3 - printed the ASCHII alphabet in lowercase and no new line.
-
-Task 4 - printed all numbers from 0 to 98 in decimal and hexadecimal. 
-
-Task 5 & 6 - Printing number combinations using loops. 
+Learning Objectives
+Understand the concepts of server-side rendering and how it differs from client-side rendering.
+Learn the benefits of using server-side rendering in web development.
+Implement SSR in Python using the Flask framework.
+Utilize Jinja templating engine to dynamically generate HTML pages.
+Read and display data from various sources including JSON, CSV, and SQLite databases.
+Handle dynamic content and user inputs in web applications.
