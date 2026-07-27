@@ -1,1 +1,1 @@
-echo "type" > 0-answer.txt
+type
